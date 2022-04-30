@@ -41,6 +41,36 @@ orderBtn.addEventListener('click', (e) => {
 
 //tvorba layers:
 
+const layers = [
+  {
+    color: '#feeeca',
+    label: 'mléčná pěna',
+  },
+  {
+    color: '#fed7b0',
+    label: 'teplé mléko',
+  },
+  {
+    color: '#613916',
+    label: 'espresso',
+  },
+];
+
+const drinkInfo = document.querySelector('.drink__info');
+layers.forEach((layer) => {
+  let newLayer = Layer(layer);
+  return drinkInfo.appendChild(newLayer);
+});
+
+//for cycle:
+/* 
+for (let i = 0; i < layers.length; i++) {
+  let newLayer = Layer(layers[i]);
+  drinkInfo.appendChild(newLayer);
+}*/
+
+//delší kód:
+/*
 const layer1 = Layer({
   color: '#feeeca',
   label: 'mléčná pěna',
@@ -58,8 +88,8 @@ const layer3 = Layer({
   label: 'espresso',
 });
 console.log(layer3);
-
 const drinkInfo = document.querySelector('.drink__info');
 drinkInfo.appendChild(layer1);
 drinkInfo.appendChild(layer2);
 drinkInfo.appendChild(layer3);
+*/
