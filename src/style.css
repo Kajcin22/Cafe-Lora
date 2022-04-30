@@ -238,12 +238,18 @@ nav a:hover {
 .gallery {
   padding-top: 0;
   min-height: 100vh;
-
   color: white;
   background-image: url('./img/gallery.jpg');
   background-size: cover;
   background-position: top center;
   background-attachment: fixed;
+  justify-content: space-between;
+}
+
+/*------- popisek v galerii -----------*/
+.gallery__intro {
+  background-color: rgba(22, 21, 16, 0.3);
+  padding: 5%;
 }
 
 .contacts {
