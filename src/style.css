@@ -293,6 +293,11 @@ nav a:hover {
     margin-bottom: 0rem;
   }
 
+  /*------skrytí hamburger menu -------*/
+  #nav-btn {
+    display: none;
+  }
+
   .nav-closed {
     display: block;
   }
