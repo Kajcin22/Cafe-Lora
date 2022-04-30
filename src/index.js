@@ -20,7 +20,8 @@ const navItems = nav.querySelectorAll('a');
 navItems.forEach((item) => item.addEventListener('click', hideNav));
 
 //objednávání:
-
+//pův kód:
+/*
 const orderBtn = document.querySelector('.order-btn');
 const drinkCup = document.querySelector('.drink__cup');
 let ordered = false;
@@ -38,7 +39,7 @@ orderBtn.addEventListener('click', (e) => {
     ordered = true;
   }
 });
-
+*/
 //tvorba drinku:
 
 const drinks = [
@@ -80,10 +81,12 @@ const drinks = [
   },
 ];
 
-const drinkList = document.querySelector('.drinks-list');
+//const drinkList = document.querySelector('.drinks-list');
+
+const menuList = document.querySelector('#menu-list');
 drinks.forEach((drink) => {
   let newDrink = Drink(drink);
-  drinkList.appendChild(newDrink);
+  menuList.appendChild(newDrink);
 });
 
 /*
