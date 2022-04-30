@@ -5,10 +5,6 @@ export const Drink = (props) => {
   const { id, name, layers, image } = props;
   let { ordered } = props;
 
-  //vytvoření elementu drink-list:
-  const drinksList = document.createElement('div');
-  drinksList.classList.add('drinks-list');
-
   //vytvoření elementu drink:
   const drink = document.createElement('div');
   drink.classList.add('drink');
@@ -36,12 +32,7 @@ export const Drink = (props) => {
     drinkInfo.appendChild(newLayer);
   });
 
-  //vytváření order buttonu:
-  //const drinkControls = document.createElement('div');
-  //drinkControls.classList.add('drink__controls');
-
-  //drinkControls.innerHTML += `<button class="order-btn">Objednat</button>`;
-
+  //vytvoření order buttonu:
   const orderBtn = drink.querySelector('.order-btn');
   const drinkCup = drink.querySelector('.drink__cup');
 
@@ -61,44 +52,5 @@ export const Drink = (props) => {
 
   console.log(drink);
 
-  //drinksList.appendChild(drink);
-  //drinksList.appendChild(drinkControls);
   return drink;
 };
-
-//html struktura drink:
-/*
-<div class="drink">
-            <div class="drink__product">
-              <div class="drink__cup">
-                <img
-                  src="https://apps.kodim.cz/daweb/cafelora/assets/cups/cappuccino.png"
-                />
-              </div>
-              <div class="drink__info">
-                <h3>Cappuccino</h3>
-                <!-- <div class="layer">
-                  <div
-                    class="layer__color"
-                    style="background-color: #feeeca"
-                  ></div>
-                  <div class="layer__label">mléčná pěna</div>
-                </div>
-                <div class="layer">
-                  <div
-                    class="layer__color"
-                    style="background-color: #fed7b0"
-                  ></div>
-                  <div class="layer__label">teplé mléko</div>
-                </div>
-
-                <div class="layer">
-                  <div
-                    class="layer__color"
-                    style="background-color: #613916"
-                  ></div>
-                  <div class="layer__label">espresso</div>
-                </div>
-                -->
-              </div>
-*/
