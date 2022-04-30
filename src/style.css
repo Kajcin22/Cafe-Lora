@@ -243,13 +243,15 @@ nav a:hover {
   background-size: cover;
   background-position: top center;
   background-attachment: fixed;
-  justify-content: space-between;
+  display: flex;
+  align-items: center;
 }
 
 /*------- popisek v galerii -----------*/
 .gallery__intro {
   background-color: rgba(22, 21, 16, 0.3);
-  padding: 5%;
+  padding: 2rem;
+  font-size: 2rem;
 }
 
 .contacts {
