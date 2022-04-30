@@ -1,4 +1,5 @@
 import './style.css';
+import { Layer } from '../src/Layer/index.js';
 
 console.log('funguju!');
 
@@ -14,10 +15,9 @@ navBtn.addEventListener('click', (e) => {
 const hideNav = () => {
   nav.classList.add('nav-closed');
 };
+
 const navItems = nav.querySelectorAll('a');
-for (let i = 0; i < navItems.length; i++) {
-  navItems[i].addEventListener('click', hideNav);
-}
+navItems.forEach((item) => item.addEventListener('click', hideNav));
 
 //objednávání:
 
@@ -38,3 +38,28 @@ orderBtn.addEventListener('click', (e) => {
     ordered = true;
   }
 });
+
+//tvorba layers:
+
+const layer1 = Layer({
+  color: '#feeeca',
+  label: 'mléčná pěna',
+});
+console.log(layer1);
+
+const layer2 = Layer({
+  color: '#fed7b0',
+  label: 'teplé mléko',
+});
+console.log(layer2);
+
+const layer3 = Layer({
+  color: '#613916',
+  label: 'espresso',
+});
+console.log(layer3);
+
+const drinkInfo = document.querySelector('.drink__info');
+drinkInfo.appendChild(layer1);
+drinkInfo.appendChild(layer2);
+drinkInfo.appendChild(layer3);
