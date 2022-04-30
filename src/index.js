@@ -1,5 +1,5 @@
 import './style.css';
-import { Layer } from '../src/Layer/index.js';
+import { Drink } from './Drink/index.js';
 
 console.log('funguju!');
 
@@ -39,57 +39,53 @@ orderBtn.addEventListener('click', (e) => {
   }
 });
 
-//tvorba layers:
+//tvorba drinku:
 
-const layers = [
+const drinks = [
   {
-    color: '#feeeca',
-    label: 'mléčná pěna',
+    id: 'cappuccino',
+    name: 'Cappuccino',
+    ordered: false,
+    layers: [
+      {
+        color: '#feeeca',
+        label: 'mléčná pěna',
+      },
+      {
+        color: '#fed7b0',
+        label: 'teplé mléko',
+      },
+      {
+        color: '#613916',
+        label: 'espresso',
+      },
+    ],
+    image: 'https://apps.kodim.cz/daweb/cafelora/assets/cups/cappuccino.png',
   },
   {
-    color: '#fed7b0',
-    label: 'teplé mléko',
-  },
-  {
-    color: '#613916',
-    label: 'espresso',
+    id: 'romano',
+    name: 'Romano',
+    ordered: false,
+    layers: [
+      {
+        color: '#fbdf5b',
+        label: 'citrón',
+      },
+      {
+        color: '#613916',
+        label: 'espresso',
+      },
+    ],
+    image: 'https://apps.kodim.cz/daweb/cafelora/assets/cups/romano.png',
   },
 ];
 
-const drinkInfo = document.querySelector('.drink__info');
-layers.forEach((layer) => {
-  let newLayer = Layer(layer);
-  return drinkInfo.appendChild(newLayer);
+const drinkList = document.querySelector('.drinks-list');
+drinks.forEach((drink) => {
+  let newDrink = Drink(drink);
+  drinkList.appendChild(newDrink);
 });
 
-//for cycle:
-/* 
-for (let i = 0; i < layers.length; i++) {
-  let newLayer = Layer(layers[i]);
-  drinkInfo.appendChild(newLayer);
-}*/
-
-//delší kód:
 /*
-const layer1 = Layer({
-  color: '#feeeca',
-  label: 'mléčná pěna',
-});
-console.log(layer1);
 
-const layer2 = Layer({
-  color: '#fed7b0',
-  label: 'teplé mléko',
-});
-console.log(layer2);
-
-const layer3 = Layer({
-  color: '#613916',
-  label: 'espresso',
-});
-console.log(layer3);
-const drinkInfo = document.querySelector('.drink__info');
-drinkInfo.appendChild(layer1);
-drinkInfo.appendChild(layer2);
-drinkInfo.appendChild(layer3);
 */
