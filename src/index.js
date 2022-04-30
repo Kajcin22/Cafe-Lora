@@ -19,29 +19,24 @@ const hideNav = () => {
 const navItems = nav.querySelectorAll('a');
 navItems.forEach((item) => item.addEventListener('click', hideNav));
 
-//objednávání:
-//pův kód:
-/*
-const orderBtn = document.querySelector('.order-btn');
-const drinkCup = document.querySelector('.drink__cup');
-let ordered = false;
-
-orderBtn.addEventListener('click', (e) => {
-  let btn = e.target;
-
-  if (ordered) {
-    btn.textContent = 'Objednat';
-    drinkCup.classList.remove('drink__cup', 'drink__cup--selected');
-    ordered = false;
-  } else {
-    btn.textContent = 'Zrušit';
-    drinkCup.classList.add('drink__cup', 'drink__cup--selected');
-    ordered = true;
-  }
-});
-*/
 //tvorba drinku:
 
+const drinksList = document.querySelector('.drinks-list');
+
+fetch('https://apps.kodim.cz/daweb/cafelora/api/drinks')
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+    data.results.forEach((drink) => {
+      let newDrink = Drink(drink);
+      drinksList.appendChild(newDrink);
+    });
+  });
+
+/*
+pův objekt:
 const drinks = [
   {
     id: 'cappuccino',
@@ -80,15 +75,4 @@ const drinks = [
     image: 'https://apps.kodim.cz/daweb/cafelora/assets/cups/romano.png',
   },
 ];
-
-//const drinkList = document.querySelector('.drinks-list');
-
-const menuList = document.querySelector('#menu-list');
-drinks.forEach((drink) => {
-  let newDrink = Drink(drink);
-  menuList.appendChild(newDrink);
-});
-
-/*
-
 */

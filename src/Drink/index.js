@@ -24,6 +24,9 @@ export const Drink = (props) => {
       <h3>${name}</h3>
     </div>
   </div>
+  <div class="drink__controls">
+    <button class="order-btn">Objednat</button>
+  </div>
   `;
 
   //vytvoření layers v třídě drink__info:
@@ -34,12 +37,12 @@ export const Drink = (props) => {
   });
 
   //vytváření order buttonu:
-  const drinkControls = document.createElement('div');
-  drinkControls.classList.add('drink__controls');
+  //const drinkControls = document.createElement('div');
+  //drinkControls.classList.add('drink__controls');
 
-  drinkControls.innerHTML += `<button class="order-btn">Objednat</button>`;
+  //drinkControls.innerHTML += `<button class="order-btn">Objednat</button>`;
 
-  const orderBtn = drinkControls.querySelector('.order-btn');
+  const orderBtn = drink.querySelector('.order-btn');
   const drinkCup = drink.querySelector('.drink__cup');
 
   orderBtn.addEventListener('click', (e) => {
@@ -58,9 +61,9 @@ export const Drink = (props) => {
 
   console.log(drink);
 
-  drinksList.appendChild(drink);
-  drinksList.appendChild(drinkControls);
-  return drinksList;
+  //drinksList.appendChild(drink);
+  //drinksList.appendChild(drinkControls);
+  return drink;
 };
 
 //html struktura drink:
